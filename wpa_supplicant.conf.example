@@ -1,14 +1,15 @@
-# Esempio di configurazione wpa_supplicant per wlan1 (driver r8712u, wext-only).
-# Sostituire i placeholder con i valori reali della rete 2.4 GHz WPA2.
-# Uso:
-#   sudo ip link set wlan1 up
-#   sudo wpa_supplicant -Dwext -i wlan1 -c /etc/wpa_supplicant/wlan1.conf -B
-#   sudo dhcpcd wlan1
+# Example wpa_supplicant configuration for the r8712u dongle interface
+# (wext-only driver). Replace the placeholders with the real values of a
+# 2.4 GHz WPA2 network.
+# Usage:
+#   sudo ip link set wlx000cf6d26ec2 up
+#   sudo wpa_supplicant -Dwext -i wlx000cf6d26ec2 -c /etc/wpa_supplicant/wlx.conf -B
+#   sudo dhcpcd wlx000cf6d26ec2
 ctrl_interface=/run/wpa_supplicant
 update_config=1
 
 network={
-    ssid="<SSID_RETE_2.4GHZ>"
+    ssid="<SSID_2.4GHZ>"
     psk="<PSK_WPA2>"
     key_mgmt=WPA-PSK
     proto=WPA RSN
